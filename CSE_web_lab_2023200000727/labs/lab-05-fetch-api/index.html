@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Workshop Registration System - Lab 05</title>
+  <!-- Direct CSS link (same folder) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Student Workshop Registration System</h1>
+      <p>CSE472: Web and Internet Programming Lab &bull; Lab Manual 05</p>
+    </header>
+
+    <main>
+      <!-- Workshop Details Section -->
+      <section class="card">
+        <h2>Workshop Details</h2>
+        <p>Click the button to load workshop information.</p>
+        <button type="button" onclick="loadWorkshop()">
+          Load Workshop Details
+        </button>
+
+        <div class="details-grid">
+          <p><strong>Title:</strong> <span id="workshopTitle">Not loaded</span></p>
+          <p><strong>Date:</strong> <span id="workshopDate">Not loaded</span></p>
+          <p><strong>Venue:</strong> <span id="workshopVenue">Not loaded</span></p>
+          <p><strong>Seats:</strong> <span id="workshopSeats">Not loaded</span></p>
+          <p><strong>Instructor:</strong> <span id="workshopInstructor">Not loaded</span></p>
+          <p><strong>Duration:</strong> <span id="workshopDuration">Not loaded</span></p>
+        </div>
+
+        <p id="loadMessage"></p>
+      </section>
+
+      <!-- Public API Practice Section -->
+      <section class="card">
+        <h2>Public API Practice</h2>
+        <button type="button" onclick="loadSampleUser()">
+          Load Sample User
+        </button>
+        <p id="apiUser">No API data loaded yet.</p>
+      </section>
+
+      <!-- Student Registration Form -->
+      <section class="card">
+        <h2>Register for Workshop</h2>
+        <form id="regForm" onsubmit="event.preventDefault(); alert('Registration submitted for: ' + (document.getElementById('workshopTitle').textContent || 'Workshop'));">
+          <div class="form-group">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" placeholder="e.g. John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="studentId">Student ID:</label>
+            <input type="text" id="studentId" placeholder="e.g. 2023200000727" required>
+          </div>
+          <div class="form-group">
+            <label for="studentEmail">Student Email:</label>
+            <input type="email" id="studentEmail" placeholder="e.g. 2023200000727@seu.edu.bd" required>
+          </div>
+          <button type="submit" class="btn-submit">Submit Registration</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Southeast University &bull; Department of Computer Science and Engineering</p>
+    </footer>
+  </div>
+
+  <!-- Direct JS script link (same folder) -->
+  <script src="script.js"></script>
+</body>
+</html>
